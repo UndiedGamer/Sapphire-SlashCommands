@@ -1,6 +1,6 @@
 import { Listener } from '@sapphire/framework';
 import type { CommandInteraction } from 'discord.js';
-import type { CustomCommand } from '../lib/structures/CustomCommand';
+import type { SlashCommand } from '../lib/structures/SlashCommand';
 
 export class InteractionCreate extends Listener {
 	public async run(interaction: CommandInteraction) {
@@ -10,17 +10,18 @@ export class InteractionCreate extends Listener {
 		if (!cmd) return;
 
 		try {
-			const command = cmd as CustomCommand
-			command.slashRun(interaction)
-		}
-		catch (e: any) {
+			const command = cmd as SlashCommand;
+			command.slashRun(interaction);
+		} catch (e: any) {
 			this.container.logger.fatal(e);
-	  
+
 			if (interaction.replied) {
-				interaction.followUp({
-					content: `There was an error:\n\`\`\`${e.message}\`\`\``,
-					ephemeral: true
-				}).catch(e => this.container.logger.fatal("An error occurred following up on an error", e));
+				interaction
+					.followUp({
+						content: `There was an error:\n\`\`\`${e.message}\`\`\``,
+						ephemeral: true
+					})
+					.catch((e) => this.container.logger.fatal('An error occurred following up on an error', e));
 			}
 		}
 	}

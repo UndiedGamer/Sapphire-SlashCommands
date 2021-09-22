@@ -1,12 +1,12 @@
-const { Command } = require('@sapphire/framework')
+const { Command } = require('@sapphire/framework');
 
 module.exports = class extends Command {
 	enabledGuilds;
 	commandData;
-	
+
 	constructor(context, options) {
-		super(context)
+		super(context);
 		this.enabledGuilds = options.enabledGuilds;
 		this.commandData = options.commandData;
 	}
-}
+};

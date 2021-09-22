@@ -158,6 +158,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sapphire/utilities@npm:next":
+  version: 2.1.0-next.8f9e6156.0
+  resolution: "@sapphire/utilities@npm:2.1.0-next.8f9e6156.0"
+  checksum: c481b6e2f155c065f4c87bdd985bcd82dc0c3cbc9790d8970c95e472f079046948226b52c5c48b320724eb0ce6587a4bec6c919a05af734239aa484b570d50c1
+  languageName: node
+  linkType: hard
+
 "@sindresorhus/is@npm:^4.0.1":
   version: 4.2.0
   resolution: "@sindresorhus/is@npm:4.2.0"
@@ -323,9 +330,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "test-bot@workspace:."
   dependencies:
+    "@sapphire/discord.js-utilities": next
     "@sapphire/framework": next
     "@sapphire/prettier-config": ^1.1.6
     "@sapphire/ts-config": ^3.0.0
+    "@sapphire/utilities": next
     discord.js: ^13.1.0
     esbuild: ^0.12.28
     prettier: ^2.4.1

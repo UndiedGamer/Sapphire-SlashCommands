@@ -1,12 +1,12 @@
-import { Command, CommandOptions, PieceContext } from "@sapphire/framework";
-import type { ApplicationCommandData, CommandInteraction } from "discord.js";
+import { Command, CommandOptions, PieceContext } from '@sapphire/framework';
+import type { ApplicationCommandData, CommandInteraction } from 'discord.js';
 
-export abstract class CustomCommand extends Command {
+export abstract class SlashCommand extends Command {
 	public readonly enabledGuilds: string[];
-	public readonly commandData: ApplicationCommandData
+	public readonly commandData: ApplicationCommandData;
 
 	constructor(context: PieceContext, options: CustomCommand.Options) {
-		super(context)
+		super(context);
 		this.enabledGuilds = options.enabledGuilds;
 		this.commandData = options.commandData;
 	}
@@ -16,7 +16,7 @@ export abstract class CustomCommand extends Command {
 
 export namespace CustomCommand {
 	export type Options = CommandOptions & {
-		enabledGuilds: string[],
-		commandData: ApplicationCommandData
-	}
+		enabledGuilds: string[];
+		commandData: ApplicationCommandData;
+	};
 }

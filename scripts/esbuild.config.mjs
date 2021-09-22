@@ -43,6 +43,6 @@ export async function build(watch = false) {
 		incremental: watch,
 		sourcemap: true,
 		external: [],
-		minify: process.env.NODE_ENV === 'production',
+		minify: process.env.NODE_ENV === 'production'
 	});
 }
